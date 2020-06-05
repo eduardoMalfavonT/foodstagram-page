@@ -1,0 +1,39 @@
+//TODO contenedor de aside
+.asideContainer {
+  position: absolute;
+  top: 29%;
+  left: 0;
+  width: 50%;
+  height: 66%;
+  z-index: 0;
+  background-color: $color-secondary;
+}
+
+//TODO clase principal aside
+.aside {
+  height: 100%;
+  &__containerIcon {
+  }
+  &__List {
+  }
+}
+//TODO clase donde estara el icono y el titulo menu
+.containerSectionIcon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  &__span {
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    // display: none;
+  }
+  &__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+  }
+}
+input {
+  background-color: red;
+}

@@ -1,0 +1,73 @@
+.headerContainer {
+  width: 100%;
+  height: 26%;
+  background-color: $color-primary;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.header {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__item {
+    position: relative;
+    flex: 1 0 15%;
+    height: 100%;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 1px;
+    transition: 0.5s;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.1) translateY(1.5rem);
+      z-index: 5;
+    }
+  }
+  &__imageItem {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+  &__logo {
+    flex: 1 0 10%;
+    height: 100%;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    &:hover {
+      transform: scale(1.2) translateY(1.5rem);
+      z-index: 5;
+    }
+  }
+  &__imageLogo {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+  &__title {
+    position: absolute;
+    &:not(:first-child) {
+      top: 40%;
+      left: 35%;
+    }
+    &:first-child {
+      top: 40%;
+      left: 0%;
+    }
+    border: 1px solid $color-secondary;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+  &__span {
+    color: $color-secondary;
+    font-size: $font-primary;
+    z-index: 10;
+  }
+}

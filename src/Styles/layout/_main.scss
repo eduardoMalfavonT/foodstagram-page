@@ -1,0 +1,8 @@
+.mainContainer {
+  position: absolute;
+  width: 100%;
+  //! cuando se comience a construir los items en el main pasar la altura a altomatico
+  height: 95%;
+  z-index: -1;
+  background-color: red;
+}
