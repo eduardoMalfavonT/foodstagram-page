@@ -1,39 +1,113 @@
 //TODO contenedor de aside
-.asideContainer {
+input#abrir-cerrar {
+  visibility: hidden;
   position: absolute;
-  top: 29%;
-  left: 0;
-  width: 50%;
-  height: 66%;
-  z-index: 0;
-  background-color: $color-secondary;
+  top: -100%;
 }
 
-//TODO clase principal aside
-.aside {
-  height: 100%;
-  &__containerIcon {
-  }
-  &__List {
-  }
-}
-//TODO clase donde estara el icono y el titulo menu
-.containerSectionIcon {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+label[for="abrir-cerrar"] {
+  cursor: pointer;
   padding: 1rem;
-  &__span {
-    font-size: 1.5rem;
-    margin-left: 1rem;
-    // display: none;
+  display: inline-block;
+}
+
+input#abrir-cerrar:checked ~ #sidebar {
+  width: 15%;
+  visibility: visible;
+  transition: width 1s;
+}
+
+input#abrir-cerrar:checked + label[for="abrir-cerrar"] {
+  margin-left: 21rem;
+  transition: margin-left 0.6s;
+  background-color: $color-primary;
+  fill: white;
+  transition: background-color 2s;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  height: 66%;
+  width: 0;
+  top: 29%;
+  left: 0;
+  background-color: $color-terciario-red;
+  overflow-x: hidden;
+  padding: 1rem 0;
+  box-sizing: border-box;
+  visibility: hidden;
+  transition: width 0.1s;
+  &__titleMenuContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
   }
   &__icon {
     width: 2.5rem;
     height: 2.5rem;
-    cursor: pointer;
+    fill: $color-primary;
+  }
+  &__title {
+    font-size: 1.5rem;
+    color: $color-primary;
   }
 }
-input {
-  background-color: red;
+
+.aside {
+  flex: 0 0 2%;
+  height: 66%;
+  background-color: $color-terciario-red;
+  box-shadow: -0.2rem -0.2rem 0.4rem rgba($color-primary-grey-dark, 0.5);
+  &__label {
+    height: 97%;
+    margin-left: 0;
+    border-left: 2px solid $color-primary;
+    background-color: $color-secondary;
+    fill: $color-primary;
+    transition: background-color 2s;
+  }
+  &__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: inherit;
+  }
+}
+
+.menu {
+  width: 100%;
+  margin-top: 0.2rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  &__li {
+    width: 100%;
+    padding: 1rem;
+    padding-left: 0;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    transition: 0.4s;
+    &:hover {
+      transform: translateX(1rem) scale(1.1);
+    }
+  }
+  &__span {
+    flex: 0 0 56%;
+    color: $color-primary;
+    font-size: 1.5rem;
+  }
+  &__icon {
+    flex: 0 0 44%;
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: $color-primary;
+  }
 }

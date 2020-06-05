@@ -6,10 +6,14 @@
 @import "./layout/main";
 @import "./layout/footer";
 @import "./layout/layout-container";
-//*TODO Aqui se importan todos los estilos para variables, mixins y funciones
+
+//TODO Aqui se importan los estilos de los contenedores
+@import "../Styles/Containers/home";
+
+//*TODO Aqui se importan todos los estilos para variables, mixins y funciones*/
 @import "./abstracts/functions";
 @import "./abstracts/mixins";
 @import "./abstracts/variables";
 
 //*TODO Aqui se importan los estilos base de la carpeta base
-@import "./base/base";
+@import "./base/animations";

@@ -1,11 +1,12 @@
 .headerContainer {
-  width: 100%;
+  flex: 0 0 98.5%;
   height: 26%;
   background-color: $color-primary;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  box-shadow: 0.2rem 0.2rem 0.4rem rgba($color-secondary, 1);
 }
 
 .header {

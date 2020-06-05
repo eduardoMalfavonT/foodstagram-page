@@ -6,7 +6,7 @@ import Footer from "../Layout/Footer";
 
 export default () => {
   return (
-    <div className="container">
+    <div className="containerHome">
       <Header />
       <Aside />
       <Main />

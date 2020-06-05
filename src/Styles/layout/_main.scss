@@ -1,8 +1,6 @@
 .mainContainer {
-  position: absolute;
-  width: 100%;
+  flex: 1 0 auto;
   //! cuando se comience a construir los items en el main pasar la altura a altomatico
-  height: 95%;
-  z-index: -1;
-  background-color: red;
+  background-color: $color-terciario-red;
+  box-shadow: -0.2rem -0.2rem 0.4rem rgba($color-primary-grey-dark, 0.5);
 }
