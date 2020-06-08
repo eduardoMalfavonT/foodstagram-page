@@ -112,3 +112,12 @@ input#abrir-cerrar:checked + label[for="abrir-cerrar"] {
     fill: $color-primary;
   }
 }
+
+.link {
+  text-decoration: none;
+  &__menu {
+    display: flex;
+    text-decoration: none;
+    width: 100%;
+  }
+}

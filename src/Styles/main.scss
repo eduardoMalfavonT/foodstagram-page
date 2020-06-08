@@ -9,8 +9,13 @@
 
 //TODO Aqui se importan los estilos de los contenedores
 @import "../Styles/Containers/home";
+@import "../Styles/Containers/burgers";
+@import "../Styles/Containers/pizzas";
+@import "../Styles/Containers/hot-dogs";
+@import "../Styles/Containers/drinks";
+@import "../Styles/Containers/foods";
 
-//*TODO Aqui se importan todos los estilos para variables, mixins y funciones*/
+//TODO Aqui se importan todos los estilos para variables, mixins y funciones
 @import "./abstracts/functions";
 @import "./abstracts/mixins";
 @import "./abstracts/variables";

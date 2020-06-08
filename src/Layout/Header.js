@@ -13,16 +13,20 @@ export default () => {
     <div className="headerContainer">
       <div className="header">
         <div className="header__item">
-          <img className="header__imageItem" src={burger} alt="burger" />
-          <div className="header__title">
-            <span className="header__span">Hamburgesa</span>
-          </div>
+          <Link to="/food/Hamburgesas">
+            <img className="header__imageItem" src={burger} alt="burger" />
+            <div className="header__title">
+              <span className="header__span">Hamburgesa</span>
+            </div>
+          </Link>
         </div>
         <div className="header__item">
-          <img className="header__imageItem" src={pizza} alt="pizza" />
-          <div className="header__title align">
-            <span className="header__span">Pizzas</span>
-          </div>
+          <Link to="/food/Pizzas">
+            <img className="header__imageItem" src={pizza} alt="pizza" />
+            <div className="header__title align">
+              <span className="header__span">Pizzas</span>
+            </div>
+          </Link>
         </div>
         <div className="header__logo">
           <Link to="/">
@@ -30,16 +34,20 @@ export default () => {
           </Link>
         </div>
         <div className="header__item">
-          <img className="header__imageItem" src={hotdog} alt="hot-dog" />
-          <div className="header__title">
-            <span className="header__span">Hot-Dogs</span>
-          </div>
+          <Link to="/food/Hot-dogs">
+            <img className="header__imageItem" src={hotdog} alt="hot-dog" />
+            <div className="header__title">
+              <span className="header__span">Hot-Dogs</span>
+            </div>
+          </Link>
         </div>
         <div className="header__item">
-          <img className="header__imageItem" src={drink} alt="vevida" />
-          <div className="header__title">
-            <span className="header__span">Vevidas</span>
-          </div>
+          <Link to="/food/drinks">
+            <img className="header__imageItem" src={drink} alt="vevida" />
+            <div className="header__title">
+              <span className="header__span">Vevidas</span>
+            </div>
+          </Link>
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 .mainContainer {
   box-sizing: border-box;
   flex: 1 0 75%;
+  min-height: 71%;
   padding: $padding-secondary $padding-default;
   //! cuando se comience a construir los items en el main pasar la altura a altomatico
   background-color: $color-terciario-red;
@@ -82,5 +83,9 @@
     width: 4rem;
     height: 4rem;
     fill: inherit;
+  }
+  &__link {
+    text-decoration: none;
+    color: inherit;
   }
 }
