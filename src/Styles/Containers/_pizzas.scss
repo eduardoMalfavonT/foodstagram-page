@@ -5,6 +5,9 @@
   flex-wrap: wrap;
   width: 100%;
   height: auto;
+  &__link {
+    width: 40%;
+  }
   &__item {
     position: relative;
     flex: 0 0 40%;

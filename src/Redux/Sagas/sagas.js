@@ -34,11 +34,71 @@ function* searchProductos() {
     yield put({ type: SEARCH_ALL_PRODUCTS_ERROR, error });
   }
 }
-//!Crear saga para hamburgesas
-//!Crear saga para pizzas
-//!Crear saga para hot dogs
-//!Crear saga para vevidas
-//!Crear saga para busqueda por id
+function* searchBurgers() {
+  try {
+    const buscando = async () => {
+      const productos = await clienteAxios.get("/productos/burger");
+      return productos.data;
+    };
+    const resultado = yield buscando();
+    yield put({ type: SEARCH_BURGER_PRODUCTS_COMPLETE, resultado });
+  } catch (error) {
+    yield put({ type: SEARCH_BURGER_PRODUCTS_ERROR, error });
+  }
+}
+function* searchPizzas() {
+  try {
+    const buscando = async () => {
+      const productos = await clienteAxios.get("/productos/pizza");
+      return productos.data;
+    };
+    const resultado = yield buscando();
+    yield put({ type: SEARCH_PIZZA_PRODUCTS_COMPLETE, resultado });
+  } catch (error) {
+    yield put({ type: SEARCH_PIZZA_PRODUCTS_ERROR, error });
+  }
+}
+function* searchHotDogs() {
+  try {
+    const buscando = async () => {
+      const productos = await clienteAxios.get("/productos/hotdog");
+      return productos.data;
+    };
+    const resultado = yield buscando();
+    yield put({ type: SEARCH_HOTDOG_PRODUCTS_COMPLETE, resultado });
+  } catch (error) {
+    yield put({ type: SEARCH_HOTDOG_PRODUCTS_ERROR, error });
+  }
+}
+function* searchDrinks() {
+  try {
+    const buscando = async () => {
+      const productos = await clienteAxios.get("/productos/drink");
+      return productos.data;
+    };
+    const resultado = yield buscando();
+    yield put({ type: SEARCH_DRINKS_PRODUCTS_COMPLETE, resultado });
+  } catch (error) {
+    yield put({ type: SEARCH_DRINKS_PRODUCTS_ERROR, error });
+  }
+}
+function* searchProductById({ value }) {
+  try {
+    const buscando = async () => {
+      const productos = await clienteAxios.get(`/producto/${value.idProducto}`);
+      return productos.data;
+    };
+    const resultado = yield buscando();
+    yield put({ type: SEARCH_PRODUCT_BY_ID_COMPLETE, resultado });
+  } catch (error) {
+    yield put({ type: SEARCH_PRODUCT_BY_ID_ERROR, error });
+  }
+}
 export default function* rootSaga() {
   yield takeLatest(SEARCH_ALL_PRODUCTS_START, searchProductos);
+  yield takeLatest(SEARCH_BURGER_PRODUCTS_START, searchBurgers);
+  yield takeLatest(SEARCH_PIZZA_PRODUCTS_START, searchPizzas);
+  yield takeLatest(SEARCH_HOTDOG_PRODUCTS_START, searchHotDogs);
+  yield takeLatest(SEARCH_DRINKS_PRODUCTS_START, searchDrinks);
+  yield takeLatest(SEARCH_PRODUCT_BY_ID_START, searchProductById);
 }

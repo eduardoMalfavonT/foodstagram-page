@@ -1,24 +1,30 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
-import hotDog from "../images/hot-dog.jpg";
+import { Link } from "react-router-dom";
 import sprite from "../images/sprite.svg";
 
-export default () => {
+export default ({ producto }) => {
+  const { _id, nombre, precio, imagen } = producto;
   return (
-    <div className="hotdogs__item">
-      <svg className="hotdogs__image-icon">
-        <use xlinkHref={`${sprite}#icon-forward`} />
-      </svg>
-      <span className="hotdogs__span">Ver detalles</span>
-      <div className="hotdogs__containerImage">
-        <img className="hotdogs__image" src={hotDog} />
+    <Link className="hotdogs__link" to={`/food/details/${_id}`}>
+      <div className="hotdogs__item">
+        <svg className="hotdogs__image-icon">
+          <use xlinkHref={`${sprite}#icon-forward`} />
+        </svg>
+        <span className="hotdogs__span">Ver detalles</span>
+        <div className="hotdogs__containerImage">
+          <img
+            className="hotdogs__image"
+            src={`http://192.168.0.6:5000/${imagen}`}
+          />
+        </div>
+        <div className="hotdogs__containerName">
+          <span className="hotdogs__name">{nombre}</span>
+        </div>
+        <div className="hotdogs__containerPrice">
+          <span className="hotdogs__price">{`${precio}$`}</span>
+        </div>
       </div>
-      <div className="hotdogs__containerName">
-        <span className="hotdogs__name">Nombre</span>
-      </div>
-      <div className="hotdogs__containerPrice">
-        <span className="hotdogs__price">20$</span>
-      </div>
-    </div>
+    </Link>
   );
 };

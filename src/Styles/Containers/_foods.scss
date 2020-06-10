@@ -5,6 +5,9 @@
   flex-wrap: wrap;
   width: 100%;
   height: auto;
+  &__link {
+    width: 40%;
+  }
   &__item {
     position: relative;
     flex: 0 0 40%;
@@ -31,6 +34,7 @@
   }
   &__image {
     width: 100%;
+    max-width: 85%; //!verificar si se puede cambiar el largo de la imagen
     height: 80%;
     border-radius: $radius-default;
     &-icon {
