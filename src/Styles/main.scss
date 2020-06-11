@@ -15,9 +15,11 @@
 @import "../Styles/Containers/drinks";
 @import "../Styles/Containers/foods";
 @import "../Styles/Containers/details";
+@import "../Styles/Containers/cart";
 
 //TODO Aqui se importan los estilos de los componentes
 @import "../Styles/Components/detailsComponent";
+@import "../Styles/Components/carritoItem";
 
 //TODO Aqui se importan todos los estilos para variables, mixins y funciones
 @import "./abstracts/functions";

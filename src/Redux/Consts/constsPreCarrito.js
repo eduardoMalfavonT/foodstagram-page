@@ -1,0 +1,2 @@
+export const INLCUDE_PRE_CART = "INLCUDE_PRE_CART";
+export const DELETE_PRE_CART = "DELETE_PRE_CART";

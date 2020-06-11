@@ -55,18 +55,28 @@ export default () => {
               </Link>
             </li>
             <li className="menu__li resalt ">
-              <svg className="menu__icon ">
-                <use xlinkHref={`${sprite}#icon-pencil1`} />
-              </svg>
-              <span className="menu__span">Pedidos</span>
+              <Link className="link__menu" to="/cart">
+                <svg className="menu__icon ">
+                  <use xlinkHref={`${sprite}#icon-shopping-cart1`} />
+                </svg>
+                <span className="menu__span">Carrito</span>
+              </Link>
             </li>
             <li className="menu__li resalt-item-menu resalt ">
+              <Link className="link__menu" to="/cart">
+                <svg className="menu__icon ">
+                  <use xlinkHref={`${sprite}#icon-pencil`} />
+                </svg>
+                <span className="menu__span">Pedidos</span>
+              </Link>
+            </li>
+            <li className="menu__li resalt ">
               <svg className="menu__icon ">
                 <use xlinkHref={`${sprite}#icon-person_add`} />
               </svg>
               <span className="menu__span">Registrarse</span>
             </li>
-            <li className="menu__li resalt ">
+            <li className="menu__li resalt-item-menu resalt ">
               <svg className="menu__icon ">
                 <use xlinkHref={`${sprite}#icon-key`} />
               </svg>
