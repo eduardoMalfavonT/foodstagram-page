@@ -2,11 +2,10 @@ import { combineReducers } from "redux";
 
 import productos from "./productos";
 import preCarrito from "./pre_carrito";
-import carrito from "./carrito";
-//!Crear reducers para ventas y usuarios
+import pedido from "./pedidos";
 const rootReducer = combineReducers({
   productos,
   preCarrito,
-  carrito,
+  pedido,
 });
 export default rootReducer;

@@ -59,6 +59,7 @@
     border: none;
     border-radius: $radius-default;
     cursor: pointer;
+    outline: none;
     transition: all 0.7s;
     &:hover {
       transform: translateY(-0.5rem) scale(1.1);

@@ -67,7 +67,8 @@ input#abrir-cerrar:checked + label[for="abrir-cerrar"] {
   background-color: $color-terciario-red;
   box-shadow: -0.2rem -0.2rem 0.4rem rgba($color-primary-grey-dark, 0.5);
   &__label {
-    height: 96%;
+    max-height: 98.5%;
+    height: 97%;
     border-left: 2px solid $color-primary;
     background-color: $color-secondary;
     fill: $color-primary;

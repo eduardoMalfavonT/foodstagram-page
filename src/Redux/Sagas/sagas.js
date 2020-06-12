@@ -19,6 +19,11 @@ import {
   SEARCH_PRODUCT_BY_ID_ERROR,
   SEARCH_PRODUCT_BY_ID_COMPLETE,
 } from "../Consts/constsProductos";
+import {
+  SEARCH_PEDIDOS_START,
+  SEARCH_PEDIDOS_COMPLETE,
+  SEARCH_PEDIDOS_ERROR,
+} from "../Consts/constsPedido";
 
 import clienteAxios from "../Api/peticionesApi";
 
@@ -94,6 +99,19 @@ function* searchProductById({ value }) {
     yield put({ type: SEARCH_PRODUCT_BY_ID_ERROR, error });
   }
 }
+
+function* searchPedidosCliente({ value }) {
+  try {
+    const buscando = async () => {
+      const pedidos = await clienteAxios.get(`/ventas/${value}`);
+      return pedidos.data;
+    };
+    const resultado = yield buscando();
+    yield put({ type: SEARCH_PEDIDOS_COMPLETE, resultado });
+  } catch (error) {
+    yield put({ type: SEARCH_PEDIDOS_ERROR, error });
+  }
+}
 export default function* rootSaga() {
   yield takeLatest(SEARCH_ALL_PRODUCTS_START, searchProductos);
   yield takeLatest(SEARCH_BURGER_PRODUCTS_START, searchBurgers);
@@ -101,4 +119,5 @@ export default function* rootSaga() {
   yield takeLatest(SEARCH_HOTDOG_PRODUCTS_START, searchHotDogs);
   yield takeLatest(SEARCH_DRINKS_PRODUCTS_START, searchDrinks);
   yield takeLatest(SEARCH_PRODUCT_BY_ID_START, searchProductById);
+  yield takeLatest(SEARCH_PEDIDOS_START, searchPedidosCliente);
 }

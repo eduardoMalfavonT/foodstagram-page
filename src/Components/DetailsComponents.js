@@ -9,8 +9,9 @@ import sprite from "../images/sprite.svg";
 const DetailsComponent = ({ producto, history }) => {
   const dispatch = useDispatch();
   const [cantidad, setCantidad] = useState(0);
-  const { nombre, precio, ingredientes, imagen, direccion } = producto;
+  const { _id, nombre, precio, ingredientes, imagen, direccion } = producto;
   const productoCantidad = {
+    _id,
     nombre,
     precio,
     ingredientes,

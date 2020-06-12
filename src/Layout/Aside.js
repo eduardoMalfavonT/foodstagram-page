@@ -63,7 +63,7 @@ export default () => {
               </Link>
             </li>
             <li className="menu__li resalt-item-menu resalt ">
-              <Link className="link__menu" to="/cart">
+              <Link className="link__menu" to="pedidos">
                 <svg className="menu__icon ">
                   <use xlinkHref={`${sprite}#icon-pencil`} />
                 </svg>

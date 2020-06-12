@@ -13,8 +13,9 @@ import Pizzas from "./Containers/Pizzas";
 import HotDogs from "./Containers/HotDogs";
 import Drinks from "./Containers/Drinks";
 import Details from "./Containers/Details";
-import "./Styles/main.scss";
 import Carrito from "./Containers/Carrito";
+import Pedidos from "./Containers/Pedidos";
+import "./Styles/main.scss";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route exact path="/food/drinks" component={Drinks} />
         <Route exact path="/food/details/:idProducto" component={Details} />
         <Route exact path="/cart" component={Carrito} />
+        <Route exact path="/pedidos" component={Pedidos} />
       </div>
     </Router>
   );
