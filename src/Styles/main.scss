@@ -17,11 +17,15 @@
 @import "../Styles/Containers/details";
 @import "../Styles/Containers/cart";
 @import "../Styles/Containers/pedidos";
+@import "../Styles/Containers/registro";
+@import "../Styles/Containers/login";
 
 //TODO Aqui se importan los estilos de los componentes
 @import "../Styles/Components/detailsComponent";
 @import "../Styles/Components/carritoItem";
 @import "../Styles/Components/pedidosItem";
+@import "../Styles/Components/registroComponent";
+@import "../Styles/Components/loginComponent";
 
 //TODO Aqui se importan todos los estilos para variables, mixins y funciones
 @import "./abstracts/functions";

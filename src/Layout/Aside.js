@@ -1,8 +1,19 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { withRouter, Link } from "react-router-dom";
+import { CRMContext } from "../Context/index";
 import sprite from "../images/sprite.svg";
 
-export default () => {
+const Aside = ({ history }) => {
+  const [auth, setAuth] = useContext(CRMContext);
+  const cerrarSesion = () => {
+    //auth.auth =false y el token se remueve
+    setAuth({
+      token: "",
+      auth: false,
+    });
+    localStorage.setItem("token", "");
+    history.push("/");
+  };
   return (
     <div className="asideContainer">
       <div id="aside" className="aside">
@@ -63,7 +74,7 @@ export default () => {
               </Link>
             </li>
             <li className="menu__li resalt-item-menu resalt ">
-              <Link className="link__menu" to="pedidos">
+              <Link className="link__menu" to="/pedidos">
                 <svg className="menu__icon ">
                   <use xlinkHref={`${sprite}#icon-pencil`} />
                 </svg>
@@ -71,20 +82,39 @@ export default () => {
               </Link>
             </li>
             <li className="menu__li resalt ">
-              <svg className="menu__icon ">
-                <use xlinkHref={`${sprite}#icon-person_add`} />
-              </svg>
-              <span className="menu__span">Registrarse</span>
+              <Link className="link__menu" to="/registro">
+                <svg className="menu__icon ">
+                  <use xlinkHref={`${sprite}#icon-person_add`} />
+                </svg>
+                <span className="menu__span">Registrarse</span>
+              </Link>
             </li>
-            <li className="menu__li resalt-item-menu resalt ">
-              <svg className="menu__icon ">
-                <use xlinkHref={`${sprite}#icon-key`} />
-              </svg>
-              <span className="menu__span">Iniciar Sesion</span>
-            </li>
+            {auth.auth === false && (
+              <li className="menu__li resalt-item-menu resalt ">
+                <Link className="link__menu" to="/login">
+                  <svg className="menu__icon ">
+                    <use xlinkHref={`${sprite}#icon-key`} />
+                  </svg>
+                  <span className="menu__span">Iniciar Sesion</span>
+                </Link>
+              </li>
+            )}
+            {auth.auth === true && (
+              <li
+                className="menu__li resalt-item-menu resalt "
+                onClick={cerrarSesion}
+              >
+                <svg className="menu__icon ">
+                  <use xlinkHref={`${sprite}#icon-key`} />
+                </svg>
+                <span className="menu__span">Cerrar Sesion</span>
+              </li>
+            )}
           </ul>
         </div>
       </div>
     </div>
   );
 };
+
+export default withRouter(Aside);

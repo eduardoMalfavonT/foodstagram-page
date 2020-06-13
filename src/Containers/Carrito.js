@@ -1,21 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { withRouter } from "react-router-dom";
+import Swal from "sweetalert2";
 //TODO se llaman las acciones
 import { deletePreCart } from "../Redux/Actions/actionPreCarrito";
 //TODO uso de selectores para recuperar los productos
 import { getPreCarrito } from "../Redux/Selectors/preCarritoSelectors";
+import { getIdUsuario } from "../Redux/Selectors/usuarioSelector";
 //TODO Implementacion del componente
 import CarritoItem from "../Components/CarritoItem";
 //TODO implementamos cliente axios para realizar la peticion tipo post para una nueva venta
 import clienteAxios from "../Redux/Api/peticionesApi";
-import Swal from "sweetalert2";
+import { CRMContext } from "../Context/index";
 import sprite from "../images/sprite.svg";
 
 const Carrito = ({ history }) => {
-  const idCliente = "5ed7ea6ca8f13e3ad4586f4f";
   const dispatch = useDispatch();
+  const [auth] = useContext(CRMContext);
+  const idCliente = useSelector((state) => getIdUsuario(state));
   const products = useSelector((state) => getPreCarrito(state));
+  if (auth.token === "") {
+    history.push("/login");
+  }
+  if (!auth.auth) {
+    history.push("/login");
+  }
   let total = 0;
   products.map((product) => {
     return (total += product.precio * product.cantidad);

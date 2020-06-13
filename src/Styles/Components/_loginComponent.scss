@@ -1,0 +1,91 @@
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  &__item {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    height: 40rem;
+    background-color: $color-secondary;
+    border-radius: $radius-default;
+    box-shadow: 0.4rem 0.4rem 0.4rem rgba($color-primary-dark, 0.7);
+    box-sizing: border-box;
+  }
+  &__titleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 100%;
+    height: 5rem;
+    background-color: $color-terciario-red;
+    border-top-left-radius: $radius-default;
+    border-top-right-radius: $radius-default;
+    box-sizing: border-box;
+  }
+  &__title {
+    font-size: $font-tertiary;
+    font-weight: bold;
+    font-style: italic;
+    color: $color-secondary;
+  }
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+    // align-items: center;
+    // justify-content: center;
+    flex: 0 0 100%;
+    margin-top: -17.5rem;
+    padding: 2rem;
+    box-sizing: border-box;
+    &-label {
+      flex: 0 0 20%;
+      text-align: center;
+      font-size: $font-secondary;
+      font-weight: 600;
+      color: $color-primary;
+    }
+    &-input {
+      flex: 0 0 30%;
+      height: 2rem;
+      border: none;
+      border-bottom: 2px solid rgba($color-primary, 0.7);
+      border-radius: 0.5rem;
+      &:hover {
+        border-bottom: 3px solid rgba($color-primary, 0.7);
+      }
+      &:focus {
+        outline: none;
+        border-bottom: 3px solid rgba($color-primary, 0.7);
+      }
+    }
+  }
+  &__formComponent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 100%;
+    box-sizing: border-box;
+  }
+  &__button {
+    width: 40%;
+    height: 70%;
+    background-color: $color-terciario-red;
+    font-size: $font-primary;
+    font-weight: 500;
+    font-style: italic;
+    color: $color-secondary;
+    border: none;
+    border-radius: $radius-default;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.5s;
+    &:hover {
+      transform: translateY(-1rem) scale(1.1);
+      transition: all 0.5s;
+    }
+  }
+}
